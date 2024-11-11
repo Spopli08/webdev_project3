@@ -329,11 +329,13 @@ section.concert img, section.concert video {
     font-size: 1.2em;
     color: #ffffff;
   }
-
   section.concert img, section.concert video {
-    max-width: 80%;
-    height: auto;
-    margin: 0 auto 1.5rem;
-    border-radius: 10px;
+    width: 100%; 
+    max-width: 700px; 
+    height: 500px; 
+    display: block;
+    margin: 0 auto 1rem auto; 
+    border-radius: 8px; 
+    object-fit: cover; 
   }
 }
