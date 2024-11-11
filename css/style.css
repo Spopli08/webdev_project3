@@ -348,3 +348,25 @@ section.concert img, section.concert video {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.info-window-content {
+  color: #918b8b;
+  background-color: #333333;
+  padding: 5px;
+  border-radius: 8px;
+  max-width: 250px; 
+  font-family: 'Lato', sans-serif;
+}
+
+.info-window-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #05d9e8;
+}
+
+.info-window-description {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: rgb(197, 247, 244);
+}
