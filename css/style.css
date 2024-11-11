@@ -370,3 +370,18 @@ section.concert img, section.concert video {
   font-size: 14px;
   color: rgb(197, 247, 244);
 }
+
+.map-style-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #05d9e8; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.map-style-button:hover {
+  background-color: #03b9c6; 
+}
