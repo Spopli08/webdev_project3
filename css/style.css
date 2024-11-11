@@ -339,3 +339,12 @@ section.concert img, section.concert video {
     object-fit: cover; 
   }
 }
+
+#map {
+  width: 80%;
+  max-width: 800px;
+  height: 500px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
