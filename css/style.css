@@ -126,7 +126,7 @@ section {
 
 .content li:before {
   font-family: 'Material Icons';
-  content: '\e5cc'; /* Change the icon by referencing Material Icons' code points */
+  content: '\e5cc';
   color: #05d9e8;
   position: absolute;
   left: 0;
@@ -209,4 +209,64 @@ section.concert img, section.concert video {
   margin: 0 auto 1rem auto; 
   border-radius: 8px; 
   object-fit: cover; 
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: 15px;
+    background-size: cover;
+  }
+
+  .navbar {
+    padding: 15px 0;
+    background-color: #383839;
+  }
+
+  .navbar li {
+    margin: 0 12px;
+  }
+
+  .navbar li a {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .concert_page {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .concert_page h1 {
+    font-size: 2em;
+    text-align: center;
+    color: #05d9e8;
+  }
+
+  section.concert {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    width: 85%;
+    background-color: rgba(40, 40, 40, 0.9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  section.concert h2 {
+    font-size: 1.6em;
+    color: #05d9e8;
+    margin-bottom: 1rem;
+  }
+
+  section.concert p {
+    font-size: 1em;
+    color: #ffffff;
+  }
+
+  section.concert img, section.concert video {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+  }
 }
