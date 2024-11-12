@@ -18,7 +18,7 @@ async function initMap() {
 
   const places = [
     {
-      position: { lat: 41.8841, lng: -87.6278 },
+      position: { lat: 41.88390533598834, lng: -87.62496223211085 },
       title: "Chicago Cultural Center",
       description: "My favorite place in Downtown to enjoy the architecture and have a coffee there.",
       color: "#ff0000"
@@ -30,7 +30,7 @@ async function initMap() {
       color: "#00ecff"
     },
     {
-      position: { lat: 41.8881, lng: -87.6487 },
+      position: { lat: 41.88379281154122, lng: -87.64870117443924 },
       title: "Sawada Coffee",
       description: "The cafe has best ambience so far for me. You should try their Military Coffee for sure!",
       color: "#8900ff"
