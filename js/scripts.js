@@ -73,3 +73,48 @@ async function initMap() {
 }
 
 google.maps.importLibrary("maps").then(initMap);
+
+// For Slider
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Slider script loaded.");
+
+  const slides = document.querySelectorAll(".slide");
+  console.log("Slides found:", slides.length);
+
+  if (slides.length === 0) {
+    console.error("No slides found. Check your HTML.");
+    return;
+  }
+
+  let currIndex = 0;
+  const interval = 3000;
+
+  function show(idx) {
+    console.log("Showing slide index:", idx);
+
+    if (idx >= slides.length) currIndex = 0;
+    if (idx < 0) currIndex = slides.length - 1;
+
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === currIndex) slide.classList.add("active");
+    });
+  }
+
+  function nextSlide() {
+    currIndex++;
+    show(currIndex);
+  }
+
+  function prevSlide() {
+    currIndex--;
+    show(currIndex);
+  }
+
+  show(currIndex);
+  setInterval(nextSlide, interval);
+
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+});
+
