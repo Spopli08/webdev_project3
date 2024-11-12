@@ -386,6 +386,32 @@ section.concert img, section.concert video {
   background-color: #03b9c6; 
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse-marker {
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000; 
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
 .slider-container {
   max-width: 600px;
   margin: 20px auto;
@@ -435,3 +461,4 @@ section.concert img, section.concert video {
 .arrow:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+

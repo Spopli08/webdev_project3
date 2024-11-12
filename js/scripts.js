@@ -1,5 +1,5 @@
 async function initMap() {
-  const { Map, Circle, InfoWindow } = await google.maps.importLibrary("maps");
+  const { Map, InfoWindow } = await google.maps.importLibrary("maps");
 
   const customMapStyle = [
     { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -32,34 +32,41 @@ async function initMap() {
     {
       position: { lat: 41.8881, lng: -87.6487 },
       title: "Sawada Coffee",
-      description: "The cafe has best ambience so far for me. You should try their Military Coffee for sure! ",
+      description: "The cafe has best ambience so far for me. You should try their Military Coffee for sure!",
       color: "#8900ff"
     }
   ];
 
   places.forEach(place => {
-    const circle = new Circle({
-      strokeColor: place.color,
-      strokeOpacity: 0.8,
-      strokeWeight: 2,
-      fillColor: place.color,
-      fillOpacity: 0.50,
-      map,
-      center: place.position,
-      radius: 200,
-    });
+    const markerDiv = document.createElement("div");
+    markerDiv.className = "pulse-marker";
+    markerDiv.style.backgroundColor = place.color;
+
+    const overlay = new google.maps.OverlayView();
+    overlay.onAdd = function() {
+      const panes = this.getPanes();
+      panes.overlayMouseTarget.appendChild(markerDiv);
+    };
+    
+    overlay.draw = function() {
+      const position = this.getProjection().fromLatLngToDivPixel(place.position);
+      markerDiv.style.left = position.x + "px";
+      markerDiv.style.top = position.y + "px";
+    };
+
+    overlay.setMap(map);
 
     const infoWindow = new InfoWindow({
       content: `
-      <div class="info-window-content">
-        <h3 class="info-window-title">${place.title}</h3>
-        <p class="info-window-description">${place.description}</p>
-      </div>
-    `
+        <div class="info-window-content">
+          <h3 class="info-window-title">${place.title}</h3>
+          <p class="info-window-description">${place.description}</p>
+        </div>
+      `
     });
 
-    circle.addListener("click", () => {
-      infoWindow.setPosition(place.position); 
+    markerDiv.addEventListener("click", () => {
+      infoWindow.setPosition(place.position);
       infoWindow.open(map);
     });
   });
